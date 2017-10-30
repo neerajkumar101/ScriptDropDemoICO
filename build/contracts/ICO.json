@@ -1,0 +1,1274 @@
+{
+  "contract_name": "ICO",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "raisedFromToken",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "name": "setToken",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_a",
+          "type": "address"
+        }
+      ],
+      "name": "setAllStopper",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "currTime",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newPayee",
+          "type": "address"
+        }
+      ],
+      "name": "changePayee",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "currSaleActive",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_for",
+          "type": "address"
+        },
+        {
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "name": "_ethValue",
+          "type": "uint256"
+        },
+        {
+          "name": "_depositedTokens",
+          "type": "uint256"
+        },
+        {
+          "name": "_reference",
+          "type": "bytes32"
+        }
+      ],
+      "name": "depositTokens",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "allStart",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "currSaleComplete",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "sale",
+          "type": "address"
+        }
+      ],
+      "name": "addSale",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "claim",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "salenum",
+          "type": "uint256"
+        }
+      ],
+      "name": "claimableOwnerEth",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "claimableRefund",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_a",
+          "type": "address"
+        },
+        {
+          "name": "_amt",
+          "type": "uint256"
+        }
+      ],
+      "name": "emergencyRefund",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "name": "_to",
+          "type": "address"
+        }
+      ],
+      "name": "transferTokens",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "weiPerEth",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "address"
+        }
+      ],
+      "name": "claimableRefund",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "salenum",
+          "type": "uint256"
+        }
+      ],
+      "name": "numContributors",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "acceptOwnership",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "t",
+          "type": "uint256"
+        }
+      ],
+      "name": "setFakeTime",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "address"
+        }
+      ],
+      "name": "claimableTokens",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "testing",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "m",
+          "type": "uint256"
+        }
+      ],
+      "name": "addMinutes",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_controller",
+          "type": "address"
+        }
+      ],
+      "name": "setController",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "setAsTest",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "numSales",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "raisedFromFiat",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "salenum",
+          "type": "uint256"
+        }
+      ],
+      "name": "claimOwnerEth",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "changeOwner",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "withdrawTopUp",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "payee",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "name": "_to",
+          "type": "address"
+        }
+      ],
+      "name": "claimFor",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "sales",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "claimableTokens",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "tokensPerEth",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "mintRefs",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "nextClaim",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "deposit",
+      "outputs": [],
+      "payable": true,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "d",
+          "type": "uint256"
+        }
+      ],
+      "name": "addDays",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "topUp",
+      "outputs": [],
+      "payable": true,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "topUpAmount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getCurrSale",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "allStop",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_for",
+          "type": "address"
+        },
+        {
+          "name": "_ethValue",
+          "type": "uint256"
+        },
+        {
+          "name": "_reference",
+          "type": "bytes32"
+        }
+      ],
+      "name": "depositFiat",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "sale",
+          "type": "address"
+        },
+        {
+          "name": "minimumPurchase",
+          "type": "uint256"
+        }
+      ],
+      "name": "addSale",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "raised",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "controller",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "token",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    },
+    {
+      "payable": true,
+      "type": "fallback"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "purchaser",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "logPurchase",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "purchaser",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "depositedTokens",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "ethValue",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "_reference",
+          "type": "bytes32"
+        }
+      ],
+      "name": "logPurchaseViaToken",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "purchaser",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "ethValue",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "_reference",
+          "type": "bytes32"
+        }
+      ],
+      "name": "logPurchaseViaFiat",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "logTokenTransfer",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "logAllStop",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "logAllStart",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "startTime",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "stopTime",
+          "type": "uint256"
+        }
+      ],
+      "name": "logSaleStart",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "purchaser",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "refund",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "tokens",
+          "type": "uint256"
+        }
+      ],
+      "name": "logClaim",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "spender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Approval",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b6001805461010060a860020a03191661010033600160a060020a03169081029190911790915560058054600160a060020a03191682179055600f80546201000060b060020a031916620100009092029190911790555b5b612433806100766000396000f300606060405236156102355763ffffffff60e060020a60003504166307cbe8ab8114610241578063144fa6d714610272578063156773ca146102935780631a6af7b7146102b45780631c1bc850146102d9578063379ba3b7146102fa5780633fe3f42714610321578063443f95dc1461035157806348b17b64146103665780634a6d02921461038d5780634e71d92d146103ae57806353cea153146103c35780635ab827f6146103eb57806367f8a8b8146104105780636a092e79146104345780636c530ee31461045b5780636e1e063f1461048057806371c1d196146104b157806379ba5097146104d95780637a08339d146104ee57806384d24226146105065780638d03b102146105375780638da5cb5b1461055e5780638ff591b41461058d57806392eefe9b146105a557806398e54c55146105c657806399aa93c8146105db5780639c492b9e14610600578063a015cb1014610625578063a6f9dae11461063d578063a8af232b1461065e578063ae90b21314610673578063b4ba9e11146106a2578063b5f522f7146106c9578063bab8fe40146106fb578063cbdd69b514610720578063cd5681d514610745578063cf0074601461076f578063d0e30db014610235578063dabd5d65146107aa578063dc29f1de146107c2578063dd592a32146107cc578063e12097b7146107f1578063ecb6c47a14610816578063eeee7cc01461082b578063efecab8a14610852578063f0ea4bfc14610876578063f77c47911461089b578063fc0c546a146108ca575b5b61023e6108f9565b5b005b341561024c57600080fd5b610260600160a060020a0360043516610973565b60405190815260200160405180910390f35b341561027d57600080fd5b61023e600160a060020a0360043516610985565b005b341561029e57600080fd5b61023e600160a060020a03600435166109e8565b005b34156102bf57600080fd5b610260610a64565b60405190815260200160405180910390f35b34156102e457600080fd5b61023e600160a060020a0360043516610a82565b005b341561030557600080fd5b61030d610ae0565b604051901515815260200160405180910390f35b341561032c57600080fd5b61023e600160a060020a0360043581169060243516604435606435608435610b8b565b005b341561035c57600080fd5b61023e610dc9565b005b341561037157600080fd5b61030d610e36565b604051901515815260200160405180910390f35b341561039857600080fd5b61023e600160a060020a0360043516610ee1565b005b34156103b957600080fd5b61023e610f0c565b005b34156103ce57600080fd5b610260600435611084565b60405190815260200160405180910390f35b34156103f657600080fd5b6102606111ce565b60405190815260200160405180910390f35b341561041b57600080fd5b61023e600160a060020a03600435166024356111df565b005b341561043f57600080fd5b61023e600160a060020a0360043581169060243516611298565b005b341561046657600080fd5b610260611404565b60405190815260200160405180910390f35b341561048b57600080fd5b610260600160a060020a036004351661142d565b60405190815260200160405180910390f35b34156104bc57600080fd5b610260600435611450565b60405190815260200160405180910390f35b34156104e457600080fd5b61023e6114e8565b005b34156104f957600080fd5b61023e600435611539565b005b341561051157600080fd5b610260600160a060020a0360043516611554565b60405190815260200160405180910390f35b341561054257600080fd5b61030d611577565b604051901515815260200160405180910390f35b341561056957600080fd5b610571611580565b604051600160a060020a03909116815260200160405180910390f35b341561059857600080fd5b61023e600435611594565b005b34156105b057600080fd5b61023e600160a060020a03600435166115b5565b005b34156105d157600080fd5b61023e611629565b005b34156105e657600080fd5b610260611663565b60405190815260200160405180910390f35b341561060b57600080fd5b61026061166a565b60405190815260200160405180910390f35b341561063057600080fd5b61023e600435611670565b005b341561064857600080fd5b61023e600160a060020a036004351661172c565b005b341561066957600080fd5b61023e611779565b005b341561067e57600080fd5b6105716117f2565b604051600160a060020a03909116815260200160405180910390f35b34156106ad57600080fd5b61023e600160a060020a0360043581169060243516611801565b005b34156106d457600080fd5b61057160043561199f565b604051600160a060020a03909116815260200160405180910390f35b341561070657600080fd5b6102606119d1565b60405190815260200160405180910390f35b341561072b57600080fd5b6102606119e2565b60405190815260200160405180910390f35b341561075057600080fd5b61030d600435611a7d565b604051901515815260200160405180910390f35b341561077a57600080fd5b610260600160a060020a0360043516611a92565b60405190815260200160405180910390f35b61023e6108f9565b005b34156107b557600080fd5b61023e600435611aa4565b005b61023e611ac7565b005b34156107d757600080fd5b610260611b0b565b60405190815260200160405180910390f35b34156107fc57600080fd5b610260611b11565b60405190815260200160405180910390f35b341561082157600080fd5b61023e611b2e565b005b341561083657600080fd5b61023e600160a060020a0360043516602435604435611b8c565b005b341561085d57600080fd5b61023e600160a060020a0360043516602435611c6c565b005b341561088157600080fd5b610260611de8565b60405190815260200160405180910390f35b34156108a657600080fd5b610571611e83565b604051600160a060020a03909116815260200160405180910390f35b34156108d557600080fd5b610571611e92565b604051600160a060020a03909116815260200160405180910390f35b600f5460009060ff161561090c57600080fd5b6109163334611ea1565b50600160a060020a0333166000818152600960205260409081902080543480820190925592917fc30df14cb928081d7587d26c00adb1c5483c8049cc0456e2d2e8e226dfb7c92091905190815260200160405180910390a25b5b50565b600b6020526000908152604090205481565b60015433600160a060020a0390811661010090920416146109a557600080fd5b600354600160a060020a0316156109bb57600080fd5b6003805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0383161790555b5b50565b60015433600160a060020a039081166101009092041614610a0857600080fd5b600154600f54620100009004600160a060020a039081166101009092041614610a305761096f565b600f805475ffffffffffffffffffffffffffffffffffffffff0000191662010000600160a060020a038416021790555b5b50565b60015460009060ff1615610a7b5750600054610a7e565b50425b5b90565b60015433600160a060020a039081166101009092041614610aa257600080fd5b600f5460ff1615610ab257600080fd5b6005805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0383161790555b5b5b50565b60006006610aec611b11565b81548110610af657fe5b906000526020600020900160005b9054906101000a9004600160a060020a0316600160a060020a03166382afd23b610b2c610a64565b60006040516020015260405160e060020a63ffffffff84160281526004810191909152602401602060405180830381600087803b1515610b6b57600080fd5b6102c65a03f11515610b7c57600080fd5b50505060405180519150505b90565b600f54600090819060ff1615610ba057600080fd5b60015433600160a060020a039081166101009092041614610bc057600080fd5b6000610bca611b11565b1115610bd557600080fd5b6000838152600a602052604090205460ff1615610bf157600080fd5b6000838152600a60209081526040808320805460ff19166001179055600160a060020a0389168352600b909152902054610c2b908661200d565b600160a060020a0387166000908152600b6020526040812091909155600680549091908110610c5657fe5b906000526020600020900160005b9054906101000a9004600160a060020a0316600160a060020a031663cbdd69b56000604051602001526040518163ffffffff1660e060020a028152600401602060405180830381600087803b1515610cbb57600080fd5b6102c65a03f11515610ccc57600080fd5b505050604051805190509150610ce0611404565b610cea8684612035565b811515610cf357fe5b6003549190049150600160a060020a03166340c10f19888360405160e060020a63ffffffff8516028152600160a060020a0390921660048301526024820152604401600060405180830381600087803b1515610d4e57600080fd5b6102c65a03f11515610d5f57600080fd5b50505085600160a060020a031687600160a060020a03167f15910e5cea9f22af6be011580707d2135bf1a23bf888657249f6e887af70a1fc86888760405192835260208301919091526040808301919091526060909101905180910390a35b5b5b50505050505050565b600f5433600160a060020a03908116620100009092041614610dea57600080fd5b600f54610100900460ff161515610e3257600f805460ff191690557f31ebd13fa817dd60b9d0ca3b04f5c010467dad9e01dce48c68ccd946dd8ec62960405160405180910390a15b5b5b565b60006006610e42611b11565b81548110610e4c57fe5b906000526020600020900160005b9054906101000a9004600160a060020a0316600160a060020a0316633a0be1a6610b2c610a64565b60006040516020015260405160e060020a63ffffffff84160281526004810191909152602401602060405180830381600087803b1515610b6b57600080fd5b6102c65a03f11515610b7c57600080fd5b50505060405180519150505b90565b60045433600160a060020a03908116911614610efc57600080fd5b61096f816000611c6c565b5b5b50565b600f546000908190819060ff1615610f2357600080fd5b610f2e336001612064565b600160a060020a033316600081815260086020526040908190208390559396509194509250907fb72449e538635569e6f2eb1500da813bc2847392fa6a6972966a484ea8f9d73a90849086905191825260208201526040908101905180910390a2600083111561100357600354600160a060020a03166340c10f19338560405160e060020a63ffffffff8516028152600160a060020a0390921660048301526024820152604401600060405180830381600087803b1515610fee57600080fd5b6102c65a03f11515610fff57600080fd5b5050505b600082111561107c57600160a060020a03331660009081526009602052604090205461102f9083612361565b600160a060020a0333166000818152600960205260409020919091556108fc6110578461237a565b9081150290604051600060405180830381858888f19350505050151561107c57600080fd5b5b5b5b505050565b60008061108f610a64565b90506006838154811015156110a057fe5b906000526020600020900160005b9054906101000a9004600160a060020a0316600160a060020a0316633a0be1a68260006040516020015260405160e060020a63ffffffff84160281526004810191909152602401602060405180830381600087803b151561110e57600080fd5b6102c65a03f1151561111f57600080fd5b50505060405180519050151561113857600091506111c8565b600680548490811061114657fe5b906000526020600020900160005b9054906101000a9004600160a060020a0316600160a060020a031663c5dacf686000604051602001526040518163ffffffff1660e060020a028152600401602060405180830381600087803b15156111ab57600080fd5b6102c65a03f115156111bc57600080fd5b50505060405180519250505b50919050565b60006111d93361142d565b90505b90565b600f54600090819060ff1615156111f557600080fd5b600f5433600160a060020a0390811662010000909204161461121657600080fd5b5050600f805461ff001916610100179055600160a060020a038216600090815260096020526040902054819081151561124d578091505b80821115611259578091505b83600160a060020a031661126c8361237a565b60405160006040518083038185876187965a03f192505050151561128f57600080fd5b5b5b5b50505050565b600154600090819033600160a060020a0390811661010090920416146112bd57600080fd5b83915081600160a060020a03166370a082313060006040516020015260405160e060020a63ffffffff8416028152600160a060020a039091166004820152602401602060405180830381600087803b151561131757600080fd5b6102c65a03f1151561132857600080fd5b5050506040518051915050600160a060020a03821663a9059cbb848360006040516020015260405160e060020a63ffffffff8516028152600160a060020a0390921660048301526024820152604401602060405180830381600087803b151561139057600080fd5b6102c65a03f115156113a157600080fd5b50505060405180519050507f977a8f1bdcf5f444d404662ea2c090d707ebcef1be61b37fe6ce74d0c6288fb8848483604051600160a060020a039384168152919092166020820152604080820192909252606001905180910390a15b5b50505050565b60015460009060ff161561141a575060c8610a7e565b50670de0b6b3a7640000610a7e565b5b90565b60008060008061143e856001612064565b9250925092508193505b505050919050565b600060068281548110151561146157fe5b906000526020600020900160005b9054906101000a9004600160a060020a0316600160a060020a0316638f03850b6000604051602001526040518163ffffffff1660e060020a028152600401602060405180830381600087803b15156114c657600080fd5b6102c65a03f115156114d757600080fd5b50505060405180519150505b919050565b60025433600160a060020a0390811691161415610e325760025460018054600160a060020a039092166101000274ffffffffffffffffffffffffffffffffffffffff00199092169190911790555b5b565b60015460ff16151561154a57600080fd5b60008190555b5b50565b600080600080611565856001612064565b9250925092508293505b505050919050565b60015460ff1681565b6001546101009004600160a060020a031681565b60015460ff1615156115a557600080fd5b60008054603c83020190555b5b50565b60015433600160a060020a0390811661010090920416146115d557600080fd5b600f5460ff16156115e557600080fd5b600454600160a060020a0316156115fb57600080fd5b6004805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0383161790555b5b5b50565b60015433600160a060020a03908116610100909204161461164957600080fd5b6006541515610e32576001805460ff1916811790555b5b5b565b6006545b90565b600c5481565b60015460009033600160a060020a03908116610100909204161461169357600080fd5b600f5460ff16156116a357600080fd5b6000828152600e602052604090205460ff16156116bf57600080fd5b6116c882611084565b90506000811115611724576000828152600e60205260409020805460ff19166001179055600554600160a060020a03166117018261237a565b60405160006040518083038185876187965a03f192505050151561172457600080fd5b5b5b5b5b5050565b60015433600160a060020a03908116610100909204161461174c57600080fd5b6002805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0383161790555b5b50565b60015460009033600160a060020a03908116610100909204161461179c57600080fd5b600f5460ff16156117ac57600080fd5b50600d80546000909155600160a060020a0333166117c98261237a565b60405160006040518083038185876187965a03f192505050151561096f57600080fd5b5b5b5b50565b600554600160a060020a031681565b6001546000908190819033600160a060020a03908116610100909204161461182857600080fd5b600f5460ff161561183857600080fd5b611843856000612064565b600160a060020a038816600081815260086020526040908190208390559396509194509250907fb72449e538635569e6f2eb1500da813bc2847392fa6a6972966a484ea8f9d73a90849086905191825260208201526040908101905180910390a2600083111561191857600354600160a060020a03166340c10f19858560405160e060020a63ffffffff8516028152600160a060020a0390921660048301526024820152604401600060405180830381600087803b151561190357600080fd5b6102c65a03f1151561191457600080fd5b5050505b600082111561199457600160a060020a0385166000908152600960205260409020546119449083612361565b600160a060020a0380871660009081526009602052604090209190915584166108fc61196f8461237a565b9081150290604051600060405180830381858888f19350505050151561199457600080fd5b5b5b5b5b5050505050565b60068054829081106119ad57fe5b906000526020600020900160005b915054906101000a9004600160a060020a031681565b60006111d933611554565b90505b90565b600060066119ee611b11565b815481106119f857fe5b906000526020600020900160005b9054906101000a9004600160a060020a0316600160a060020a031663cbdd69b56000604051602001526040518163ffffffff1660e060020a028152600401602060405180830381600087803b1515610b6b57600080fd5b6102c65a03f11515610b7c57600080fd5b50505060405180519150505b90565b600a6020526000908152604090205460ff1681565b60086020526000908152604090205481565b60015460ff161515611ab557600080fd5b600080546201518083020190555b5b50565b60015433600160a060020a039081166101009092041614611ae757600080fd5b600f5460ff1615611af757600080fd5b611b03600d543461200d565b600d555b5b5b565b600d5481565b6006546000901515611b2257600080fd5b50600654600019015b90565b600f5433600160a060020a03908116620100009092041614611b4f57600080fd5b600f805460ff191660011790557f0a9a784214055eda7660e0eea4cac1eb3e349173dce3741cb49393e72e98070160405160405180910390a15b5b565b600f5460ff1615611b9c57600080fd5b60015433600160a060020a039081166101009092041614611bbc57600080fd5b6000611bc6611b11565b1115611bd157600080fd5b6000818152600a602052604090205460ff1615611bed57600080fd5b6000818152600a60205260409020805460ff19166001179055600c54611c13908361200d565b600c55611c208383611ea1565b82600160a060020a03167f8a890695a0d1d5bc0de2dd9278f1b080ce4fa5f192849361d46119e98dea1f4d838360405191825260208201526040908101905180910390a25b5b5b505050565b60045460009033600160a060020a03908116911614611c8a57600080fd5b600f5460ff1615611c9a57600080fd5b5060068054908160018101611caf83826123bc565b916000526020600020900160005b8154600160a060020a038088166101009390930a838102910219909116179091556000838152600760205260408082208690557fea217d4dc825d94490e4479842497722c85e7da8444afc5a5c6928966e85849393506378e97925919051602001526040518163ffffffff1660e060020a028152600401602060405180830381600087803b1515611d4d57600080fd5b6102c65a03f11515611d5e57600080fd5b5050506040518051905084600160a060020a03166303ff5e736000604051602001526040518163ffffffff1660e060020a028152600401602060405180830381600087803b1515611dae57600080fd5b6102c65a03f11515611dbf57600080fd5b5050506040518051905060405191825260208201526040908101905180910390a15b5b5b505050565b60006006611df4611b11565b81548110611dfe57fe5b906000526020600020900160005b9054906101000a9004600160a060020a0316600160a060020a031663f0ea4bfc6000604051602001526040518163ffffffff1660e060020a028152600401602060405180830381600087803b1515610b6b57600080fd5b6102c65a03f11515610b7c57600080fd5b50505060405180519150505b90565b600454600160a060020a031681565b600354600160a060020a031681565b600080611eac611b11565b9150611eb6610ae0565b1515611ec157600080fd5b600082815260076020526040902054831015611edc57600080fd5b6006805483908110611eea57fe5b906000526020600020900160005b9054906101000a9004600160a060020a0316600160a060020a031663d2395dcd8585611f22610a64565b60006040516020015260405160e060020a63ffffffff8616028152600160a060020a03909316600484015260248301919091526044820152606401602060405180830381600087803b1515611f7657600080fd5b6102c65a03f11515611f8757600080fd5b5050506040518051915050600081111561128f57600354600160a060020a03166340c10f19858360405160e060020a63ffffffff8516028152600160a060020a0390921660048301526024820152604401600060405180830381600087803b1515611ff157600080fd5b6102c65a03f11515610dbe57600080fd5b5050505b5b50505050565b600082820161202a8482108015906120255750838210155b6123ac565b8091505b5092915050565b600082820261202a841580612025575083858381151561205157fe5b04145b6123ac565b8091505b5092915050565b60035460009081908190600160a060020a0316151561208257600080fd5b50600160a060020a0384166000908152600860205260409020545b60065481108015612148575060068054829081106120b757fe5b906000526020600020900160005b9054906101000a9004600160a060020a0316600160a060020a0316633a0be1a66120ed610a64565b60006040516020015260405160e060020a63ffffffff84160281526004810191909152602401602060405180830381600087803b151561212c57600080fd5b6102c65a03f1151561213d57600080fd5b505050604051805190505b80156121f4575083806121f4575061215e610a64565b600680548390811061216c57fe5b906000526020600020900160005b9054906101000a9004600160a060020a0316600160a060020a03166303ff5e736000604051602001526040518163ffffffff1660e060020a028152600401602060405180830381600087803b15156121d157600080fd5b6102c65a03f115156121e257600080fd5b505050604051805190506301e1338001105b5b15612358576122a38260068381548110151561220d57fe5b906000526020600020900160005b9054906101000a9004600160a060020a0316600160a060020a031663696c58c48860006040516020015260405160e060020a63ffffffff8416028152600160a060020a039091166004820152602401602060405180830381600087803b151561228357600080fd5b6102c65a03f1151561229457600080fd5b5050506040518051905061200d565b915061234e836006838154811015156122b857fe5b906000526020600020900160005b9054906101000a9004600160a060020a0316600160a060020a031663450efe218860006040516020015260405160e060020a63ffffffff8416028152600160a060020a039091166004820152602401602060405180830381600087803b151561228357600080fd5b6102c65a03f1151561229457600080fd5b5050506040518051905061200d565b925060010161209d565b5b5b9250925092565b600061236f838311156123ac565b508082035b92915050565b600030600160a060020a03163182111561239f5750600160a060020a033016316114e3565b50806114e3565b5b919050565b80151561096f57600080fd5b5b50565b81548183558181151161107c5760008381526020902061107c9181019083016123e6565b5b505050565b610a7e91905b8082111561240057600081556001016123ec565b5090565b905600a165627a7a72305820b33793c8273f56354044a294c2f7e76256f753b1eb9df6a0448c8ec46f5005ce0029",
+  "networks": {
+    "1509080743358": {
+      "events": {
+        "0xc30df14cb928081d7587d26c00adb1c5483c8049cc0456e2d2e8e226dfb7c920": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "value",
+              "type": "uint256"
+            }
+          ],
+          "name": "logPurchase",
+          "type": "event"
+        },
+        "0x15910e5cea9f22af6be011580707d2135bf1a23bf888657249f6e887af70a1fc": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "token",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "depositedTokens",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "ethValue",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "_reference",
+              "type": "bytes32"
+            }
+          ],
+          "name": "logPurchaseViaToken",
+          "type": "event"
+        },
+        "0x8a890695a0d1d5bc0de2dd9278f1b080ce4fa5f192849361d46119e98dea1f4d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "ethValue",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "_reference",
+              "type": "bytes32"
+            }
+          ],
+          "name": "logPurchaseViaFiat",
+          "type": "event"
+        },
+        "0x977a8f1bdcf5f444d404662ea2c090d707ebcef1be61b37fe6ce74d0c6288fb8": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "token",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "logTokenTransfer",
+          "type": "event"
+        },
+        "0x0a9a784214055eda7660e0eea4cac1eb3e349173dce3741cb49393e72e980701": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "logAllStop",
+          "type": "event"
+        },
+        "0x31ebd13fa817dd60b9d0ca3b04f5c010467dad9e01dce48c68ccd946dd8ec629": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "logAllStart",
+          "type": "event"
+        },
+        "0xea217d4dc825d94490e4479842497722c85e7da8444afc5a5c6928966e858493": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "startTime",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "stopTime",
+              "type": "uint256"
+            }
+          ],
+          "name": "logSaleStart",
+          "type": "event"
+        },
+        "0xb72449e538635569e6f2eb1500da813bc2847392fa6a6972966a484ea8f9d73a": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "refund",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "tokens",
+              "type": "uint256"
+            }
+          ],
+          "name": "logClaim",
+          "type": "event"
+        },
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "value",
+              "type": "uint256"
+            }
+          ],
+          "name": "Transfer",
+          "type": "event"
+        },
+        "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "spender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "value",
+              "type": "uint256"
+            }
+          ],
+          "name": "Approval",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x4e252c321bf086502ff3486c5340d7a26d3f3615",
+      "updated_at": 1509107055047
+    },
+    "1509343500065": {
+      "events": {
+        "0xc30df14cb928081d7587d26c00adb1c5483c8049cc0456e2d2e8e226dfb7c920": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "value",
+              "type": "uint256"
+            }
+          ],
+          "name": "logPurchase",
+          "type": "event"
+        },
+        "0x15910e5cea9f22af6be011580707d2135bf1a23bf888657249f6e887af70a1fc": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "token",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "depositedTokens",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "ethValue",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "_reference",
+              "type": "bytes32"
+            }
+          ],
+          "name": "logPurchaseViaToken",
+          "type": "event"
+        },
+        "0x8a890695a0d1d5bc0de2dd9278f1b080ce4fa5f192849361d46119e98dea1f4d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "ethValue",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "_reference",
+              "type": "bytes32"
+            }
+          ],
+          "name": "logPurchaseViaFiat",
+          "type": "event"
+        },
+        "0x977a8f1bdcf5f444d404662ea2c090d707ebcef1be61b37fe6ce74d0c6288fb8": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "token",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "logTokenTransfer",
+          "type": "event"
+        },
+        "0x0a9a784214055eda7660e0eea4cac1eb3e349173dce3741cb49393e72e980701": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "logAllStop",
+          "type": "event"
+        },
+        "0x31ebd13fa817dd60b9d0ca3b04f5c010467dad9e01dce48c68ccd946dd8ec629": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "logAllStart",
+          "type": "event"
+        },
+        "0xea217d4dc825d94490e4479842497722c85e7da8444afc5a5c6928966e858493": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "startTime",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "stopTime",
+              "type": "uint256"
+            }
+          ],
+          "name": "logSaleStart",
+          "type": "event"
+        },
+        "0xb72449e538635569e6f2eb1500da813bc2847392fa6a6972966a484ea8f9d73a": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "refund",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "tokens",
+              "type": "uint256"
+            }
+          ],
+          "name": "logClaim",
+          "type": "event"
+        },
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "value",
+              "type": "uint256"
+            }
+          ],
+          "name": "Transfer",
+          "type": "event"
+        },
+        "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "spender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "value",
+              "type": "uint256"
+            }
+          ],
+          "name": "Approval",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x6530c7ec6541c12e87decc73cfc9764eb96837b0",
+      "updated_at": 1509343509547
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1509343509547
+}
