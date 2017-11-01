@@ -171,7 +171,7 @@ Auction is firstsale / 4
         uint time = ico.currTime();
         uint totalTokens = ico.sales(0).getSoldTokens();
         if (ico.sales(0).isComplete(time)) {
-            totalTokens = safeAdd(totalTokens, auctionTokens());
+            // totalTokens = safeAdd(totalTokens, auctionTokens());
             totalTokens = safeAdd(totalTokens, ownerTokens());
             totalTokens = safeAdd(totalTokens, advisorTokens());
         }
@@ -228,4 +228,3 @@ Auction is firstsale / 4
         ico.token().setMaxSupply(totalTokenSupply());
     }
 }
-

@@ -2,11 +2,15 @@ pragma solidity >=0.4.4;
 
 import "./Common.sol";
 import "./Token.sol";
+import "./FirstSale.sol";
 
 contract ICO is EventDefinitions, Testable, SafeMath, Owned {
     Token public token;
     address public controller;
     address public payee;
+    FirstSale public sale;
+
+    uint private equalWeiForEthers;
 
     Sale[] public sales;
     
@@ -51,6 +55,15 @@ contract ICO is EventDefinitions, Testable, SafeMath, Owned {
         token = Token(_token);
     }
 
+    function firstSaleAddress() returns (address) {
+        return address(sale);
+    }
+    function setFirstSale(address _sale) {
+        if (address(sale) != 0x0) throw;
+        
+        sale = FirstSale(_sale);
+    }
+
     //before adding sales, we can set this to be a test ico
     //this lets us manipulate time and drastically lowers weiPerEth
     function setAsTest() onlyOwner {
@@ -73,6 +86,9 @@ contract ICO is EventDefinitions, Testable, SafeMath, Owned {
     onlyController notAllStopped {
         uint salenum = sales.length;
         sales.push(Sale(sale));
+
+        sale = sales[0];        
+
         saleMinimumPurchases[salenum] = minimumPurchase;
         logSaleStart(Sale(sale).startTime(), Sale(sale).stopTime());
     }
@@ -109,7 +125,7 @@ contract ICO is EventDefinitions, Testable, SafeMath, Owned {
     event logPurchase(address indexed purchaser, uint value);
 
     function () payable {
-        deposit();
+        buyTokensFromICO();
     }
 
     function deposit() payable notAllStopped {
@@ -121,6 +137,15 @@ contract ICO is EventDefinitions, Testable, SafeMath, Owned {
 
         logPurchase(msg.sender, msg.value);
     }
+
+    function buyTokensFromICO() 
+    payable notAllStopped returns (uint) {
+
+        equalWeiForEthers = sale.calculateWeiForEthers(msg.value);
+        token.transfer(msg.sender, equalWeiForEthers);
+
+        logPurchase(msg.sender, equalWeiForEthers);
+    }   
 
     //is also called by token contributions
     function doDeposit(address _for, uint _value) private {

@@ -3,9 +3,45 @@ pragma solidity >=0.4.4;
 import './Common.sol';
 
 //ERC20 token
+contract ERC20Interface {
+     // Get the total token supply
+     function totalSupply() constant returns (uint256 totalSupply);
+  
+     // Get the account balance of another account with address _owner
+     function getTokenBalance(address _owner) constant returns (uint256 balance);
+  
+     // Send _value amount of tokens to address _to
+     function transfer(address _to, uint256 _value) returns (bool success);
+  
+     // Send _value amount of tokens from address _from to address _to
+     function transferFrom(address _from, address _to, uint256 _value) returns (bool success);
+  
+     // Allow _spender to withdraw from your account, multiple times, up to the _value amount.
+     // If this function is called again it overwrites the current allowance with _value.
+     // this function is required for some DEX functionality
+     function approve(address _spender, uint256 _value) returns (bool success);
+  
+     // Returns the amount which _spender is still allowed to withdraw from _owner
+     function allowance(address _owner, address _spender) constant returns (uint256 remaining);
+  
 
-contract Token is SafeMath, Owned, Constants {
+    //============================================ events ===========================================
+
+     // Triggered when tokens are transferred.
+     event Transfer(address indexed _from, address indexed _to, uint256 _value);
+  
+     // Triggered whenever approve(address _spender, uint256 _value) is called.
+     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
+
+     event Mint(address owner, uint amount);
+
+ }
+
+contract Token is ERC20Interface, SafeMath, Owned, Constants {
     uint public totalSupply;
+
+    uint coinInWei = 1**18; // value of a single coin in wei
+    uint billion = 1**9;
 
     address ico;
     address controller;
@@ -26,7 +62,14 @@ contract Token is SafeMath, Owned, Constants {
         _;
     } 
 
-    function Token() {         
+    function Token() {     
+
+        // totalSupply = coinInWei * billion; // 1  billion coins
+        totalSupply = 1000000000000000000000000000; // 1e+27  is 1 billion coins
+        
+        owner = msg.sender;
+        balanceOf[owner] = totalSupply;
+
         owner = msg.sender;
         name = "ScriptDrop Token";
         decimals = uint(DECIMALS);
@@ -38,28 +81,19 @@ contract Token is SafeMath, Owned, Constants {
             throw;
         ico = _ico;
     }
+
     function setController(address _controller) onlyOwner {
         if (controller != 0) 
             throw;
         controller = _controller;
     }
 
-    // //========================================== Testing Only ===========================================
-    
-    function getTokenBalance(address _a) returns (uint) {
+    function getTokenBalance(address _a) constant returns (uint256) {
         return balanceOf[_a];
     }
 
-    // //===================================================================================================
-
-    event Transfer(address indexed from, address indexed to, uint value);
-    event Approval(address indexed owner, address indexed spender, uint value);
-    event Mint(address owner, uint amount);
-
     //only called from contracts so don't need msg.data.length check
-    // function mint(address addr, uint amount) onlyControllers {
-    function mint(address addr, uint amount) {
-        
+    function mint(address addr, uint amount) onlyControllers {
         if (maxSupply > 0 && safeAdd(totalSupply, amount) > maxSupply) 
             throw;
         balanceOf[addr] = safeAdd(balanceOf[addr], amount);
@@ -101,7 +135,7 @@ contract Token is SafeMath, Owned, Constants {
         return true;
     }
 
-    function approve(address _spender, uint _value) 
+    function approve(address _spender, uint256 _value) 
     onlyPayloadSize(2)
     returns (bool success) 
     {
@@ -113,6 +147,13 @@ contract Token is SafeMath, Owned, Constants {
         allowance[msg.sender][_spender] = _value;
         Approval(msg.sender, _spender, _value);
         return true;
+    }
+
+    function allowance(address _owner, address _spender)
+    onlyPayloadSize(2) 
+    constant 
+    returns (uint256 remaining) {
+         return allowance[_owner][_spender];
     }
 
     function increaseApproval (address _spender, uint _addedValue) 

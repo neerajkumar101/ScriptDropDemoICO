@@ -97,7 +97,12 @@ contract FirstSale is Sale, SafeMath, EventDefinitions, Owned, Constants {
 
         return userTokens; //will be minted immediately
     }
+    
+    function calculateWeiForEthers(uint ethers) returns (uint){
 
+        return safeMul(2000, ethers);
+
+    }
     //these are the unminted tokens, given to ico for minting in claim()
     //for auction, that's how user gets tokens
     //in firstsale, the tokens are minted immediately
