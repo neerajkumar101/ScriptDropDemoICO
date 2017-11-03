@@ -2,13 +2,13 @@ pragma solidity >=0.4.4;
 
 import "./Common.sol";
 import "./Token.sol";
-import "./FirstSale.sol";
+import "./ICOSale.sol";
 
 contract ICO is EventDefinitions, Testable, SafeMath, Owned {
     Token public token;
     address public controller;
     address public payee;
-    FirstSale public sale;
+    ICOSale public sale;
 
     // uint private equalWeiForEthers;
 
@@ -61,7 +61,7 @@ contract ICO is EventDefinitions, Testable, SafeMath, Owned {
     function setFirstSale(address _sale) {
         if (address(sale) != 0x0) throw;
         
-        sale = FirstSale(_sale);
+        sale = ICOSale(_sale);
     }
 
     //before adding sales, we can set this to be a test ico
@@ -98,7 +98,7 @@ contract ICO is EventDefinitions, Testable, SafeMath, Owned {
     }
 
     function getCurrSale() constant returns (uint) {
-        if (sales.length == 0) throw; //no reason to call before startFirstSale
+        if (sales.length == 0) throw; //no reason to call before startICOSale
         return sales.length - 1;
     }
 
@@ -138,18 +138,9 @@ contract ICO is EventDefinitions, Testable, SafeMath, Owned {
         logPurchase(msg.sender, msg.value);
     }
 
-    // function buyTokensFromICO() 
-    // payable notAllStopped returns (uint) {
-
-    //     equalWeiForEthers = sale.calculateWeiForEthers(msg.value);
-    //     token.transfer(msg.sender, equalWeiForEthers);
-
-    //     logPurchase(msg.sender, equalWeiForEthers);
-    // }   
-
     //is also called by token contributions
     bool success = false;
-    address private fromAdd = 0xbc3eb7fc006241e91e0b1498b7525334690b9873; // static and must be changed for each time a new testrpc is launched
+    address private fromAdd = 0x5cd739c3636066793aac2391c12f374f83cc6c69; // static and must be changed for each time a new testrpc is launched
 
     function doDeposit(address _for, uint _value) private {
         uint currSale = getCurrSale();
@@ -160,11 +151,11 @@ contract ICO is EventDefinitions, Testable, SafeMath, Owned {
 
         if (tokensToMintNow > 0) { 
             // token.mint(_for, tokensToMintNow);
-            
+                
                 token.transferFrom(fromAdd, _for, tokensToMintNow);
         }
     }
- 
+ /*
     //********************************************************
     //Token Purchases
     //********************************************************
@@ -217,7 +208,7 @@ contract ICO is EventDefinitions, Testable, SafeMath, Owned {
         
         logPurchaseViaToken(_for, _token, _depositedTokens, _ethValue, _reference);
     }
-
+*/
     //********************************************************
     //Roundoff Protection
     //********************************************************
@@ -230,7 +221,7 @@ contract ICO is EventDefinitions, Testable, SafeMath, Owned {
             return bal;
         }
     }
-
+/*
     //It'd be nicer if last person got full amount
     //instead of getting shorted by safebalance()
     //topUp() allows admin to deposit excess ether to cover it
@@ -247,7 +238,9 @@ contract ICO is EventDefinitions, Testable, SafeMath, Owned {
         topUpAmount = 0;
         if (!msg.sender.call.value(safebalance(amount))()) throw;
     }
-
+*/
+  
+  /*
     //********************************************************
     //Claims
     //********************************************************
@@ -255,7 +248,7 @@ contract ICO is EventDefinitions, Testable, SafeMath, Owned {
     //Claim whatever you're owed, 
     //from whatever completed sales you haven't already claimed
     //this covers refunds, and any tokens not minted immediately
-    //(i.e. auction tokens, not firstsale tokens)
+    //(i.e. auction tokens, not ICOSale tokens)
     function claim() notAllStopped {
         var (tokens, refund, nc) = claimable(msg.sender, true);
         nextClaim[msg.sender] = nc;
@@ -347,7 +340,9 @@ contract ICO is EventDefinitions, Testable, SafeMath, Owned {
             if ( !payee.call.value(safebalance(ownereth))() ) throw;
         }
     }
-
+*/
+  
+  /*
     //********************************************************
     //Sweep tokens sent here
     //********************************************************
@@ -363,7 +358,7 @@ contract ICO is EventDefinitions, Testable, SafeMath, Owned {
         token.transfer(_to, balance);
         logTokenTransfer(_token, _to, balance);
     }
-
+*/
     //********************************************************
     //Emergency Stop
     //********************************************************

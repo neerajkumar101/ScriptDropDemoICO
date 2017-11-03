@@ -1,26 +1,22 @@
-var ICOControllerMonolith = artifacts.require("ICOControllerMonolith");
+var ICOController = artifacts.require("ICOController");
 var ICO = artifacts.require("ICO");
 var Token = artifacts.require("Token");
-var AuctionLauncher = artifacts.require("AuctionLauncher");
-var FirstSaleLauncher = artifacts.require("FirstSaleLauncher");
-var FirstSale = artifacts.require("FirstSale");
+var ICOSaleLauncher = artifacts.require("ICOSaleLauncher");
+var ICOSale = artifacts.require("ICOSale");
 var Advisor = artifacts.require("Advisor");
 
-console.log(AuctionLauncher);
-
 module.exports = function(deployer) {
-  deployer.deploy(ICOControllerMonolith); 
+  deployer.deploy(ICOController); 
 
-  deployer.link(ICOControllerMonolith, ICO);  
+  deployer.link(ICOController, ICO);  
   deployer.deploy(ICO);  
 
   deployer.link(ICO, Token);    
   deployer.deploy(Token); 
 
-  deployer.deploy(AuctionLauncher);   
-  deployer.deploy(FirstSaleLauncher);
+  deployer.deploy(ICOSaleLauncher);
   
   deployer.deploy(Advisor);    
-  deployer.deploy(FirstSale);        
+  deployer.deploy(ICOSale);        
   
 };

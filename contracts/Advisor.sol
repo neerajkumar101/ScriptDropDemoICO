@@ -12,9 +12,9 @@ contract Advisor {
         ico.deposit.value(msg.value)();
     }
 
-    function claim() {
-        ico.claim();
-    }
+    // function claim() {
+    //     ico.claim();
+    // }
 
     function () payable {
     }

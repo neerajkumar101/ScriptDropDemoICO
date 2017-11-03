@@ -2,14 +2,14 @@ pragma solidity >=0.4.4;
 
 import "./Common.sol";
 
-contract FirstSaleLauncher {
+contract ICOSaleLauncher {
     function launch(address ico, uint _weiPerDollar, uint _weiPerEth, uint _time) 
     returns (address) {
-        return address(new FirstSale(ico, _weiPerDollar, _weiPerEth, _time));
+        return address(new ICOSale(ico, _weiPerDollar, _weiPerEth, _time));
     }
 }
 
-contract FirstSale is Sale, SafeMath, EventDefinitions, Owned, Constants {
+contract ICOSale is Sale, SafeMath, EventDefinitions, Owned, Constants {
     uint public minEth;
     uint[6] rates;      //tokens per ETH
     uint[6] thresholds; //in dollars
@@ -20,7 +20,7 @@ contract FirstSale is Sale, SafeMath, EventDefinitions, Owned, Constants {
     
     mapping (address => uint) tokens;
     
-    function FirstSale(address ico, uint _weiPerDollar, uint _weiPerEth, uint _time) {
+    function ICOSale(address ico, uint _weiPerDollar, uint _weiPerEth, uint _time) {
         owner = ico;
         startTime = _time;
         stopTime = _time + 7 days;
@@ -62,10 +62,10 @@ contract FirstSale is Sale, SafeMath, EventDefinitions, Owned, Constants {
     }
 
     function tokensPerEth() constant returns (uint rate) {
-        // for (uint i = 0; i < rates.length; i++) {
-        //     if (raised >= thresholds[i]) rate = rates[i];
-        // }
-        rate = 10000;
+        for (uint i = 0; i < rates.length; i++) {
+            if (raised >= thresholds[i]) rate = rates[i];
+        }
+        // rate = 10000;
     }
 
     event logExcess(address a, uint sent, uint refund);

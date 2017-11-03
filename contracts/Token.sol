@@ -40,9 +40,6 @@ contract ERC20Interface {
 contract Token is ERC20Interface, SafeMath, Owned, Constants {
     uint public totalSupply;
 
-    uint coinInWei = 1**18; // value of a single coin in wei
-    uint billion = 1**9;
-
     address ico;
     address controller;
 
