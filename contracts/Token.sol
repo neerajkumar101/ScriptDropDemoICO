@@ -5,7 +5,7 @@ import './Common.sol';
 //ERC20 token
 contract ERC20Interface {
      // Get the total token supply
-     function totalSupply() constant returns (uint totalSupply);
+     function totalSupply() returns (uint totalSupply);
   
      // Get the account balance of another account with address _owner
      function getTokenBalance(address _owner) constant returns (uint balance);
@@ -87,7 +87,7 @@ contract Token is ERC20Interface, SafeMath, Owned, Constants {
             throw;
         controller = _controller;
     }
-    function totalSupply() constant returns (uint totalSupply) {
+    function totalSupply() returns (uint) {
         return totalSupply;
     }
 

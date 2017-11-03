@@ -1,7 +1,7 @@
 pragma solidity ^0.4.4;
 
 import "./Common.sol";
-import "./Token.sol";
+import "./Token.sol"; 
 import "./ICO.sol";
 import "./FirstSale.sol";
 import "./Auction.sol";

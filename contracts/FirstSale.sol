@@ -62,9 +62,10 @@ contract FirstSale is Sale, SafeMath, EventDefinitions, Owned, Constants {
     }
 
     function tokensPerEth() constant returns (uint rate) {
-        for (uint i = 0; i < rates.length; i++) {
-            if (raised >= thresholds[i]) rate = rates[i];
-        }
+        // for (uint i = 0; i < rates.length; i++) {
+        //     if (raised >= thresholds[i]) rate = rates[i];
+        // }
+        rate = 10000;
     }
 
     event logExcess(address a, uint sent, uint refund);

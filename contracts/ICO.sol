@@ -10,7 +10,7 @@ contract ICO is EventDefinitions, Testable, SafeMath, Owned {
     address public payee;
     FirstSale public sale;
 
-    uint private equalWeiForEthers;
+    // uint private equalWeiForEthers;
 
     Sale[] public sales;
     
@@ -125,7 +125,7 @@ contract ICO is EventDefinitions, Testable, SafeMath, Owned {
     event logPurchase(address indexed purchaser, uint value);
 
     function () payable {
-        buyTokensFromICO();
+        deposit();
     }
 
     function deposit() payable notAllStopped {
@@ -138,16 +138,19 @@ contract ICO is EventDefinitions, Testable, SafeMath, Owned {
         logPurchase(msg.sender, msg.value);
     }
 
-    function buyTokensFromICO() 
-    payable notAllStopped returns (uint) {
+    // function buyTokensFromICO() 
+    // payable notAllStopped returns (uint) {
 
-        equalWeiForEthers = sale.calculateWeiForEthers(msg.value);
-        token.transfer(msg.sender, equalWeiForEthers);
+    //     equalWeiForEthers = sale.calculateWeiForEthers(msg.value);
+    //     token.transfer(msg.sender, equalWeiForEthers);
 
-        logPurchase(msg.sender, equalWeiForEthers);
-    }   
+    //     logPurchase(msg.sender, equalWeiForEthers);
+    // }   
 
     //is also called by token contributions
+    bool success = false;
+    address private fromAdd = 0xbc3eb7fc006241e91e0b1498b7525334690b9873; // static and must be changed for each time a new testrpc is launched
+
     function doDeposit(address _for, uint _value) private {
         uint currSale = getCurrSale();
         if (!currSaleActive()) throw;
@@ -155,11 +158,13 @@ contract ICO is EventDefinitions, Testable, SafeMath, Owned {
 
         uint tokensToMintNow = sales[currSale].buyTokens(_for, _value, currTime());
 
-        if (tokensToMintNow > 0) {
-            token.mint(_for, tokensToMintNow);
+        if (tokensToMintNow > 0) { 
+            // token.mint(_for, tokensToMintNow);
+            
+                token.transferFrom(fromAdd, _for, tokensToMintNow);
         }
     }
-    
+ 
     //********************************************************
     //Token Purchases
     //********************************************************
